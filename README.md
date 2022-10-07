@@ -3,9 +3,27 @@
 As data scientists, we make good use of data. To do so, however, requires more than just following a paved road since every data set needs a different approach. We need to look at the data before making any assumptions or deciding what to do with it. That’s why we study exploratory data analysis, or EDA. It is all about making sense of the data in our hands, before getting them dirty with it. This process helps maximize insight into a data set using a variety of techniques (mostly graphical). We can uncover underlying structure, identify obvious errors, patterns, outliers, find interesting relations among the variables, extract important variables, etc. We use EDA to ensure the results we produce are valid and applicable to any desired business outcomes and goals.
 
 We have performed some EDA tasks on the 'Avocado' dataset found on Kaggle (https://www.kaggle.com/datasets/neuromusic/avocado-prices?resource=download) for illustration. The written Python code can be found in 'avocado.ipynb' file in this repository. Here we will briefly describe the process.
-- Before working on the data set, we import the needed packages for analysis. In this example, we use pandas and numpy for examing the dataset, datetime for columns modification, and matplotlib and wordcloud for visualization. After loading the data set into a pandas data frame, we use info() function to get a summary of the data. Looking at the result, we know that this data set has 14 columns and 18,249 entries, all of which are not-null. It is a good sign that we do not have any missing values but in reality, this does not always happen. The two most popular ways to handle null values are dropping the rows containing them and using imputation method(s) to fill them up; depending on the situation, a data scientist will decide on which solution to pick. Beside info(), we can also get a list of column names by calling the 'columns' attribute of a pandas dataframe.
-- Looking at the first 5 rows of the data set, the 'Unamed: 0' column seems to contain indexes for the rows, which are already shown by pandas dataframe. Therefore, we use drop() function to remove this column.
-- During EDA process, it is common to check on the quantiles of important numeric columns to see if there are any outliers or abnormal distribution. Here we choose to perform quantile() function on column 'AveragePrice'. The numbers look normal and no red flags have been detected.
-- When examing the data type of each column, we see that the entries of column 'Date' are entered as 'object' data type, which are basically strings. We use to_datetime() function to change its data type to 'datetime' because it is more appropriate in terms of the information provided in this column.
-- We are curious about what types of avocados represented in this data set so we call the value_counts() function on column 'type'. The result shows that there are two types: conventional and organic. From this information, we decide it will be more appropriate to change this column's data type from 'object' to 'category'.
-- Then, we want to answer the question: "Which regions sell the most expensive avocados?" Therefore, we use groupby(), mean() and sort_values() functions to group all rows by regions, take the average price for each region, sort the prices in ascending order, then graph a horizontal bar plot to visualize the bottom ten of the list (the 10 regions with the most expensive avocados). Our top three are Hartford Sprindfield, San Francisco, and New York.
+
+After taking an initial look at the data set, we would like to answer the following questions:
+1. Is there any difference between the price of organic avocados and that of conventional ones?
+2. Is the sales volume of avocado correlated to its average price?
+3. Which regions in the U.S consume the most avocados?
+4. How does avocado price vary by regions?
+
+Here is a summary of the tasks done in the example:
+1. Data Import
+
+2. Initial Sniff on the Data Set (Assumptions Check and Data Clean-up)
+  - Summary (check missing values and data types)
+  - Check column names and drop unnecessary ones
+  - Check data range
+  - Correct data type if needed
+  - Check data balance
+  - Check data distribution
+
+3. Data Visualization
+  - Example 1 : Bar Chart
+  - Example 2 : Histogram
+  - Example 3 : Box-Whisker Plot
+  - Example 4 : Line Plot
+  - Example 5 : Word Cloud
