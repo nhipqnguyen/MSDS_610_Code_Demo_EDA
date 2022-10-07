@@ -1,5 +1,6 @@
 # MSDS 610 Code Demo
 # Topic: EDA
+#### *By Joy Huang and Nhi Nguyen*
 As data scientists, we make good use of data. To do so, however, requires more than just following a paved road since every data set needs a different approach. We need to look at the data before making any assumptions or deciding what to do with it. That’s why we study exploratory data analysis, or EDA. It is all about making sense of the data in our hands, before getting them dirty with it. This process helps maximize insight into a data set using a variety of techniques (mostly graphical). We can uncover underlying structure, identify obvious errors, patterns, outliers, find interesting relations among the variables, extract important variables, etc. We use EDA to ensure the results we produce are valid and applicable to any desired business outcomes and goals.
 
 We have performed some EDA tasks on the 'Avocado' dataset found on Kaggle (https://www.kaggle.com/datasets/neuromusic/avocado-prices?resource=download) for illustration. The written Python code can be found in 'avocado.ipynb' file in this repository. Here we will briefly describe the process.
